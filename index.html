@@ -6,51 +6,66 @@
     <title>Thư viện Nhân vật Lịch sử - Sử Ký Đất Việt</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fafafa;
-            line-height: 1.6;
-            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
         }
         h1 {
-            color: #333;
+            color: #2e86c1;
+            font-size: 1.8em;
+            margin-bottom: 30px;
         }
         .character-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         .character-list li {
             padding: 15px;
             margin: 10px 0;
-            background-color: #e0f7fa;
+            background-color: #e3f2fd;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
             font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .character-list li:hover {
-            background-color: #b2ebf2;
+            background-color: #bbdefb;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Nhân vật Lịch sử</h1>
+        <h1>Thư viện Nhân Vật Lịch Sử</h1>
         <ul class="character-list">
             <li onclick="goToCharacterDetail('haibatrung')">Hai Bà Trưng</li>
             <li onclick="goToCharacterDetail('ngquyen')">Ngô Quyền</li>
+            <!-- Thêm các nhân vật khác tại đây -->
         </ul>
     </div>
 
     <script>
         function goToCharacterDetail(characterId) {
-            window.location.href = `https://spacezq.github.io/Nhan-vat-lich-su/character_detail.html?id=${characterId}`;
+            window.location.href = 'character_detail.html?id=' + characterId;
         }
     </script>
 </body>
