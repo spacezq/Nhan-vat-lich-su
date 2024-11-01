@@ -24,11 +24,16 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
             text-align: center;
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: translateY(-5px);
         }
         h1 {
             color: #2e86c1;
-            font-size: 1.8em;
-            margin-bottom: 30px;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
         .character-list {
             list-style: none;
@@ -41,15 +46,23 @@
             background-color: #e3f2fd;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1.1em;
+            font-size: 1.2em;
             transition: background-color 0.3s, transform 0.2s;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .character-list li:hover {
             background-color: #bbdefb;
             transform: translateY(-2px);
+        }
+        .character-list li:active {
+            transform: scale(0.98);
+        }
+        .character-list li span {
+            font-weight: bold;
+            color: #00796b;
         }
     </style>
 </head>
@@ -57,8 +70,14 @@
     <div class="container">
         <h1>Thư viện Nhân Vật Lịch Sử</h1>
         <ul class="character-list">
-            <li onclick="goToCharacterDetail('haibatrung')">Hai Bà Trưng</li>
-            <li onclick="goToCharacterDetail('ngquyen')">Ngô Quyền</li>
+            <li onclick="goToCharacterDetail('haibatrung')">
+                <span>Hai Bà Trưng</span>
+                <i class="fas fa-arrow-right"></i>
+            </li>
+            <li onclick="goToCharacterDetail('ngquyen')">
+                <span>Ngô Quyền</span>
+                <i class="fas fa-arrow-right"></i>
+            </li>
             <!-- Thêm các nhân vật khác tại đây -->
         </ul>
     </div>
@@ -68,5 +87,8 @@
             window.location.href = 'character_detail.html?id=' + characterId;
         }
     </script>
+    
+    <!-- Thêm Font Awesome cho biểu tượng mũi tên (nếu cần) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
